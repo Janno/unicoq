@@ -1030,8 +1030,8 @@ module struct
     in
     report (
       log_eq_spine env "CS" R.CONV t t' (dbg, evd') &&=
-      ise_list2 (fun x1 x -> Feedback.msg_debug (Printer.pr_econstr_env env evd x1); Feedback.msg_debug (Printer.pr_econstr_env env evd x); unify_constr env x1 (substl ks x)) params1 (List.map of_constr params) &&=
-      ise_list2 (fun u1 u -> Feedback.msg_debug (Printer.pr_econstr_env env evd u1); Feedback.msg_debug (Printer.pr_econstr_env env evd u); unify_constr env u1 (substl ks u)) us2 (List.map of_constr us) &&=
+      ise_list2 (fun x1 x -> Feedback.msg_debug (Printer.pr_econstr_env env evd' x1); Feedback.msg_debug (Printer.pr_econstr_env env evd' x); unify_constr env x1 (substl ks x)) params1 (List.map of_constr params) &&=
+      ise_list2 (fun u1 u -> Feedback.msg_debug (Printer.pr_econstr_env env evd' u1); Feedback.msg_debug (Printer.pr_econstr_env env evd' u); unify_constr env u1 (substl ks u)) us2 (List.map of_constr us) &&=
       unify' env (decompose_app evd' c1) (c,(List.rev ks)) &&=
       ise_list2 (unify_constr env) ts ts1)
 
