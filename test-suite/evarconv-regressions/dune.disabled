@@ -1,0 +1,16 @@
+(rocq.theory
+ (name Unirocq.EvarconvRegressions)
+ (modules
+  bug_16872_cumulative_inductive_cumulativity
+  bug_19358_untyped_primitive_projection
+  bug_19611_reducible_cs_key
+  bug_20175_primitive_reduction
+  bug_20210513_dependent_product_cs
+  bug_20210514_lambda_cs_key
+  bug_20210523_sprop_irrelevance
+  bug_20240207_cs_extra_args
+  bug_20250106_cs_try_all_keys
+  non_bug_19987_refold_before_instantiation)
+ (flags (:standard -test-mode))
+ (plugins unicoq.plugin)
+ (theories Unicoq Ltac2))
